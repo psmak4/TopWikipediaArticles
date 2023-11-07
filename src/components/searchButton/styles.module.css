@@ -1,0 +1,21 @@
+.searchButton {
+	display: flex;
+	padding: 12px 24px;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	align-self: stretch;
+	border-radius: 100px;
+	background: var(--brand-green-500, #025b4b);
+}
+
+.text {
+	color: var(--neutral-000, #fff);
+	text-align: center;
+	font-family: Averta Std;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: -0.32px;
+}
