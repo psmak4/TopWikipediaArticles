@@ -1,8 +1,12 @@
 import styles from './styles.module.css'
 
-const SearchButton = () => {
+interface SearchButtonProps {
+	disabled: boolean
+}
+
+const SearchButton = ({ disabled }: SearchButtonProps) => {
 	return (
-		<button type='submit' className={styles.searchButton}>
+		<button type='submit' className={styles.searchButton} disabled={disabled}>
 			<span className={styles.text}>Search</span>
 		</button>
 	)
