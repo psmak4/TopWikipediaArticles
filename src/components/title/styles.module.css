@@ -1,0 +1,11 @@
+.title {
+	align-self: stretch;
+	color: var(--neutral-900-text, #05090d);
+	text-align: center;
+	font-family: Lora;
+	font-size: 28px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%;
+	letter-spacing: -0.56px;
+}
