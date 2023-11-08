@@ -15,6 +15,7 @@
 }
 
 .item {
+	cursor: pointer;
 	align-self: stretch;
 	color: var(--text-primary, #020202);
 	text-align: center;
