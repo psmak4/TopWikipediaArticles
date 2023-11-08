@@ -1,0 +1,26 @@
+.dropdownList {
+	position: absolute;
+	z-index: 100;
+	top: calc(100% + 8px);
+	left: 0;
+	display: flex;
+	width: 200px;
+	padding: 32px 16px;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 24px;
+	border-radius: 24px;
+	background: var(--neutral-000, #fff);
+	box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.12);
+}
+
+.item {
+	align-self: stretch;
+	color: var(--text-primary, #020202);
+	text-align: center;
+	font-family: Poppins;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+}

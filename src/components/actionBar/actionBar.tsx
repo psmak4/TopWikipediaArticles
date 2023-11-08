@@ -1,5 +1,6 @@
 import { MouseEvent, useState } from 'react'
 import WikipediaApi from '~/api/wikipedia'
+import NumResultsDropdown from '~/components/numResultsDropdown'
 import SearchButton from '~/components/searchButton'
 import { setArticles } from '~/stores/articlesStore'
 import styles from './styles.module.css'
@@ -25,6 +26,7 @@ const ActionBar = () => {
 
 	return (
 		<form onSubmit={handleSubmit} className={styles.actionBar}>
+			<NumResultsDropdown />
 			<SearchButton disabled={searchDisabled} />
 		</form>
 	)
