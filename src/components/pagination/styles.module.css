@@ -1,6 +1,45 @@
 .pagination {
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
 	gap: 24px;
+}
+
+.buttonContainer {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+}
+
+.buttonContent {
+	display: flex;
+	width: 40px;
+	height: 40px;
+	flex-direction: column;
+	justify-content: center;
+	flex-shrink: 0;
+	color: var(--neutral-900, #05090d);
+	text-align: center;
+	font-family: Poppins;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: -0.28px;
+}
+
+.pageButton {
+	display: flex;
+	width: 40px;
+	height: 40px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 100px;
+	border: 1px solid var(--neutral-400, #d4d8d9);
+	background: var(--neutral-000, #fff);
+}
+
+.pageButtonSelected {
+	background: var(--avocado-300, #e0e9cb);
 }
