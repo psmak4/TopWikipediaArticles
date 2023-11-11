@@ -1,5 +1,5 @@
 import { MouseEvent } from 'react'
-import { setPageSize } from '~/stores/articlesStore'
+import ArticlesStore, { setCurrentPage, setPageSize } from '~/stores/articlesStore'
 import styles from './styles.module.css'
 
 const numResultsOptions = [25, 50, 75, 100, 200]
@@ -9,12 +9,20 @@ interface DropdownListProps {
 }
 
 const DropdownList = ({ onChange = () => void 0 }: DropdownListProps) => {
+	const { articles, currentPage } = ArticlesStore()
+
 	const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
 		event.preventDefault()
 
 		const button = event.target as HTMLButtonElement
-		const value = parseInt(button.dataset.value as string)
-		setPageSize(value)
+		const pageSize = parseInt(button.dataset.value as string)
+
+		const pageCount = Math.ceil(articles.length / pageSize)
+
+		setPageSize(pageSize)
+
+		if (pageCount < currentPage) setCurrentPage(pageCount)
+
 		onChange()
 	}
 
