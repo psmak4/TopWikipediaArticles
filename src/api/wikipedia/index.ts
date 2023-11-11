@@ -41,8 +41,8 @@ const GetTopArticlesByDate = async ({ date }: GetTopArticlesByDateProps): Promis
 	}
 
 	const year = date.getFullYear()
-	const month = date.getMonth() + 1 // Note: Months are zero-based, so add 1.
-	const day = date.getDate()
+	const month = ('0' + (date.getMonth() + 1)).slice(-2) // Note: Months are zero-based, so add 1.
+	const day = ('0' + date.getDate()).slice(-2)
 
 	const response = await fetch(`https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/${year}/${month}/${day}`)
 	if (!response.ok) {
