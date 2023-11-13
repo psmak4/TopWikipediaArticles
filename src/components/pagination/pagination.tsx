@@ -1,5 +1,6 @@
 import { ReactNode, useEffect, useState } from 'react'
 import ArticlesStore, { setCurrentPage } from '~/stores/articlesStore'
+import DirectionButton from '../directionButton'
 import styles from './styles.module.css'
 
 const Pagination = () => {
@@ -13,8 +14,9 @@ const Pagination = () => {
 
 		for (let i = start; i <= end; i++) {
 			const style = i === currentPage ? `${styles.pageButton} ${styles.pageButtonSelected}` : `${styles.pageButton}`
+			const disabled = currentPage === i
 			buttons.push(
-				<button key={`pageButton-${i}`} className={style} onClick={() => setCurrentPage(i)}>
+				<button key={`pageButton-${i}`} className={style} onClick={() => setCurrentPage(i)} disabled={disabled}>
 					<span className={styles.buttonContent}>{i}</span>
 				</button>,
 			)
@@ -30,7 +32,9 @@ const Pagination = () => {
 
 	return (
 		<div className={styles.pagination}>
+			<DirectionButton direction='prev' />
 			<div className={styles.buttonContainer}>{getPageButtons()}</div>
+			<DirectionButton direction='next' />
 		</div>
 	)
 }

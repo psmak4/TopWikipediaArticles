@@ -1,0 +1,33 @@
+.directionButton {
+	cursor: pointer;
+	display: flex;
+	width: 40px;
+	height: 40px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 100px;
+	border: 1px solid var(--neutral-400, #d4d8d9);
+	background: var(--neutral-000, #fff);
+}
+
+.directionButton:hover {
+	background: var(--neutral-400, #d4d8d9);
+}
+
+.directionButton:hover > .icon > svg {
+	fill: #737680;
+}
+
+.icon {
+	display: flex;
+	width: 20px;
+	height: 20px;
+	padding: 2px;
+	justify-content: center;
+	align-items: center;
+	flex-shrink: 0;
+}
+
+.icon > svg {
+	fill: #025b4b;
+}

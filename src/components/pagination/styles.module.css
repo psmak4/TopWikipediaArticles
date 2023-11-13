@@ -30,6 +30,7 @@
 }
 
 .pageButton {
+	cursor: pointer;
 	display: flex;
 	width: 40px;
 	height: 40px;
@@ -40,6 +41,19 @@
 	background: var(--neutral-000, #fff);
 }
 
+.pageButton:disabled {
+	cursor: default;
+}
+
+.pageButton:not(.pageButtonSelected):hover {
+	background: var(--neutral-400, #d4d8d9);
+}
+
 .pageButtonSelected {
 	background: var(--avocado-300, #e0e9cb);
+}
+
+.pageButtonSelected > .buttonContent {
+	color: var(--brand-green-500, #025b4b);
+	font-weight: 600;
 }
