@@ -2,28 +2,19 @@ import { MouseEvent, useEffect, useState } from 'react'
 import WikipediaApi from '~/api/wikipedia'
 import NumResultsDropdown from '~/components/numResultsDropdown'
 import SearchButton from '~/components/searchButton'
-import Article from '~/models/article'
-import { setArticles } from '~/stores/articlesStore'
+import ArticlesStore, { setArticles } from '~/stores/articlesStore'
+import DatePicker from '../datePicker'
 import styles from './styles.module.css'
 
-const getYesterday = (): Date => {
-	const date = new Date()
-	date.setDate(date.getDate() - 1)
-
-	return date
-}
-
 const ActionBar = () => {
+	const { searchDate } = ArticlesStore()
 	const [searchDisabled, setSearchDisabled] = useState<boolean>(false)
-	const [searchDate, setSearchDate] = useState<Date>(getYesterday())
 
 	const getArticles = async (): Promise<void> => {
 		try {
 			setSearchDisabled(true)
-			const results = await WikipediaApi.GetTopArticlesByDate({ date: searchDate })
-			// const date = new Date(2023, 10, 9)
-			// const results = await WikipediaApi.GetTopArticlesByDate({ date })
-			const articles = results.items[0].articles
+			const response = await WikipediaApi.GetTopArticlesByDate({ date: searchDate })
+			const articles = response.items[0].articles
 			setArticles(articles)
 		} catch (error) {
 			console.error(error)
@@ -45,6 +36,7 @@ const ActionBar = () => {
 
 	return (
 		<form onSubmit={handleSubmit} className={styles.actionBar}>
+			<DatePicker />
 			<NumResultsDropdown />
 			<SearchButton disabled={searchDisabled} />
 		</form>

@@ -1,0 +1,7 @@
+.calendarDropdown {
+	position: absolute;
+	z-index: 100;
+	top: calc(100% + 8px);
+	left: calc((100vw - 375px - 48px) / 2); /* (screen width - component width - horizontal padding of parent container) / 2 */
+	width: 375px;
+}

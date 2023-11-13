@@ -1,18 +1,17 @@
 import { useState } from 'react'
+import listIcon from '~/assets/list-icon.png'
 import DropdownList from '~/components/dropdownList'
 import ArticlesStore from '~/stores/articlesStore'
 import ButtonWithIcon from '../buttonWithIcon'
 import styles from './styles.module.css'
 
+const label = '# RESULTS'
+
 const NumResultsDropdown = () => {
 	const { pageSize } = ArticlesStore()
 	const [isOpen, setIsOpen] = useState<boolean>(false)
 
-	const icon = (
-		<div className={styles.icon}>
-			<i className={`${styles.iconContent} fa-solid fa-list-ul`}></i>
-		</div>
-	)
+	const icon = <img src={listIcon} alt={label} />
 
 	const handleClick = () => {
 		setIsOpen(!isOpen)
@@ -24,7 +23,7 @@ const NumResultsDropdown = () => {
 
 	return (
 		<div className={styles.numResultsDropdown}>
-			<ButtonWithIcon icon={icon} isOpen={isOpen} label='# RESULTS' onClick={handleClick} value={pageSize} />
+			<ButtonWithIcon icon={icon} isOpen={isOpen} label={label} onClick={handleClick} value={pageSize} />
 			{isOpen && <DropdownList onChange={onChange} />}
 		</div>
 	)
