@@ -4,8 +4,6 @@ import Calendar from 'react-calendar'
 import ArticlesStore, { setSearchDate } from '~/stores/articlesStore'
 import styles from './styles.module.css'
 
-const today = new Date()
-
 interface CalendarDropdownProps {
 	onChange: () => void
 }
@@ -16,6 +14,7 @@ type Value = ValuePiece | [ValuePiece, ValuePiece]
 
 const CalendarDropdown = ({ onChange = () => void 0 }: CalendarDropdownProps) => {
 	const { searchDate } = ArticlesStore()
+	const maxDate = new Date(new Date().setDate(new Date().getDate() - 1)) // yesterday
 
 	const handleChange = (value: Value, event: MouseEvent<HTMLButtonElement>) => {
 		event.preventDefault()
@@ -29,7 +28,7 @@ const CalendarDropdown = ({ onChange = () => void 0 }: CalendarDropdownProps) =>
 
 	return (
 		<div className={styles.calendarDropdown}>
-			<Calendar onChange={handleChange} value={searchDate} maxDate={new Date(today.setDate(today.getDate() - 1))} calendarType='gregory' />
+			<Calendar onChange={handleChange} value={searchDate} maxDate={maxDate} calendarType='gregory' />
 		</div>
 	)
 }

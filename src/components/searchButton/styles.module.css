@@ -20,3 +20,10 @@
 	line-height: 24px;
 	letter-spacing: -0.32px;
 }
+
+@media (min-width: 700px) {
+	.searchButton {
+		width: 160px;
+		flex-shrink: 0;
+	}
+}

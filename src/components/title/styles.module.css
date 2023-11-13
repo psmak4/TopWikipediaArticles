@@ -9,3 +9,11 @@
 	line-height: 150%;
 	letter-spacing: -0.56px;
 }
+
+@media (min-width: 700px) {
+	.title {
+		margin-bottom: 40px;
+		font-size: 40px;
+		letter-spacing: -0.8px;
+	}
+}

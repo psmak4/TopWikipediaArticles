@@ -37,6 +37,9 @@ const ActionBar = () => {
 	return (
 		<form onSubmit={handleSubmit} className={styles.actionBar}>
 			<DatePicker />
+			<div className={styles.divider}>
+				<div className={styles.dividerLine}></div>
+			</div>
 			<NumResultsDropdown />
 			<SearchButton disabled={searchDisabled} />
 		</form>

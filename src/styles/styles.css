@@ -18,7 +18,7 @@
 	--neutral-500: #a7aaab;
 	--neutral-600: #737680;
 	--neutral-900: #05090d;
-	--breakpoint: 700px;
+	--breakpoint: 700px; /* no breakpoint was specified; making a best guess here; this won't be used as media queries do not currently support CSS variables */
 }
 
 body {
@@ -163,4 +163,10 @@ body {
 	border-radius: 24px;
 	background-color: var(--ivy-300, #b3cec9);
 	color: var(--brand-green-500, #025b4b);
+}
+
+@media (min-width: 700px) {
+	#root {
+		align-items: center;
+	}
 }
