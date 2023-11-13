@@ -9,8 +9,8 @@ const Pins = () => {
 
 	return (
 		<div className={styles.pins}>
-			{[...pins].map((article, idx) => (
-				<ArticleItem key={idx} article={article} isPin={true} />
+			{[...pins].map((value, idx) => (
+				<ArticleItem key={idx} article={value[1]} isPin={true} showRank={false} />
 			))}
 		</div>
 	)

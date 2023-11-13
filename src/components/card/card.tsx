@@ -5,8 +5,13 @@ import ArticlesStore from '~/stores/articlesStore'
 import styles from './styles.module.css'
 
 const Card = () => {
-	const { articles, currentPage, pageSize } = ArticlesStore()
+	const { articles, currentPage, pageSize, pins } = ArticlesStore()
 	const [pagedArticles, setPagedArticles] = useState<Array<Article>>([])
+
+	const isPin = (article: Article) => {
+		const key = JSON.stringify(article)
+		return pins.has(key)
+	}
 
 	useEffect(() => {
 		const end = currentPage * pageSize
@@ -18,7 +23,7 @@ const Card = () => {
 	return (
 		<div className={styles.card}>
 			{pagedArticles.map((article, idx) => (
-				<ArticleItem key={idx} article={article} />
+				<ArticleItem key={idx} article={article} isPin={isPin(article)} />
 			))}
 		</div>
 	)

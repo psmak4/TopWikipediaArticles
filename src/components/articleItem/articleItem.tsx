@@ -8,9 +8,10 @@ import styles from './styles.module.css'
 interface ArticleItemProps {
 	article: Article
 	isPin?: boolean
+	showRank?: boolean
 }
 
-const ArticleItem = ({ article, isPin = false }: ArticleItemProps) => {
+const ArticleItem = ({ article, isPin = false, showRank = true }: ArticleItemProps) => {
 	const getFormattedTitle = (title: string) => {
 		return title.replaceAll('_', ' ')
 	}
@@ -30,7 +31,7 @@ const ArticleItem = ({ article, isPin = false }: ArticleItemProps) => {
 
 	return (
 		<article className={styles.article}>
-			{!isPin && <div className={styles.rank}>{article.rank}</div>}
+			{showRank && <div className={styles.rank}>{article.rank}</div>}
 			<h2 className={styles.title}>{getFormattedTitle(article.article)}</h2>
 			<div className={styles.views}>{getFormattedViews(article.views)}</div>
 			<button className={styles.pin} onClick={handlePinClick}>
