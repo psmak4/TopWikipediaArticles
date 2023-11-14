@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownList component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="dropdownList"
+    role="list"
+  >
+    <button
+      class="item"
+      data-value="25"
+    >
+      25
+    </button>
+    <button
+      class="item"
+      data-value="50"
+    >
+      50
+    </button>
+    <button
+      class="item"
+      data-value="75"
+    >
+      75
+    </button>
+    <button
+      class="item"
+      data-value="100"
+    >
+      100
+    </button>
+    <button
+      class="item"
+      data-value="200"
+    >
+      200
+    </button>
+  </div>
+</DocumentFragment>
+`;

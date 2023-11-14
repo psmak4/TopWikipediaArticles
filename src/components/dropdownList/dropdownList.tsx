@@ -2,7 +2,7 @@ import { MouseEvent } from 'react'
 import ArticlesStore, { setCurrentPage, setPageSize } from '~/stores/articlesStore'
 import styles from './styles.module.css'
 
-const numResultsOptions = [25, 50, 75, 100, 200]
+export const numResultsOptions = [25, 50, 75, 100, 200]
 
 interface DropdownListProps {
 	onChange?: () => void

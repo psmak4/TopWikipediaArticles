@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pins matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="pins"
+    data-testid="pins"
+  >
+    <article
+      class="article"
+    >
+      <h2
+        class="title"
+      >
+        Article 1
+      </h2>
+      <div
+        class="views"
+      >
+        100 views
+      </div>
+      <button
+        class="pin"
+      >
+        <img
+          alt="Unpin this article"
+          src=""
+        />
+      </button>
+    </article>
+    <article
+      class="article"
+    >
+      <h2
+        class="title"
+      >
+        Article 2
+      </h2>
+      <div
+        class="views"
+      >
+        200 views
+      </div>
+      <button
+        class="pin"
+      >
+        <img
+          alt="Unpin this article"
+          src=""
+        />
+      </button>
+    </article>
+  </div>
+</DocumentFragment>
+`;
