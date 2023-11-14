@@ -1,27 +1,35 @@
-# React + TypeScript + Vite
+# Top Wikipedia Articles
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project provides the user with a list of the 1000 top articles from Wikipedia for a specified date (default is yesterday).
 
-Currently, two official plugins are available:
+## Available Scripts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+In the project directory, you can run:
 
-## Expanding the ESLint configuration
+### `npm start`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Runs the app in the development mode.\
+Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
 
-- Configure the top-level `parserOptions` property like this:
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+### `npm test`
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Launches the test runner in the interactive watch mode.
+
+### `npm run build`
+
+Builds the app for production to the `dist` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+## Project Description
+
+This project was built for Grow Therapy, based on the take-home assessment. All styling is based on the provided Figma designs.
+
+The enhancement option that I chose was to add the ability to pin articles to the top of the page. Pinned articles are stored in the browser's `localStorage`.
+
+A `Map` object is used to store the list of pinned articles in memory while the app is running. A `Map` allows us to keep the list of articles unique based on a given key.
