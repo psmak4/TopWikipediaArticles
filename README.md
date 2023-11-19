@@ -2,6 +2,8 @@
 
 This project provides the user with a list of the 1000 top articles from Wikipedia for a specified date (default is yesterday).
 
+This project was for a Staff Software Engineer position I was interviewing for. I didn't get the job. Oh well.
+
 ## Available Scripts
 
 In the project directory, you can run:
