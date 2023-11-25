@@ -4,6 +4,8 @@ This project provides the user with a list of the 1000 top articles from Wikiped
 
 This project was for a Staff Software Engineer position I was interviewing for. I didn't get the job. Oh well.
 
+[Project description document (PDF)](./Frontend_Take_Home_Assessment.pdf)
+
 ## Available Scripts
 
 In the project directory, you can run:
